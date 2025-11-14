@@ -17,14 +17,17 @@ public class ChatHub : Hub
 
         var msg = new Message
         {
-            User = user ?? "Anon",
+            User = string.IsNullOrEmpty(user) ? "Anon" : user,
             Text = message,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            Sentiment = SentimentLabel.Neutral, // тимчасово Neutral
+            SentimentScore = null
         };
 
         _db.Messages.Add(msg);
         await _db.SaveChangesAsync();
 
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+        // відправляємо на клієнт
+        await Clients.All.SendAsync("ReceiveMessage", msg.User, msg.Text, "Neutral");
     }
 }
