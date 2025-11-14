@@ -1,21 +1,21 @@
+using ChatWebApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-
-// Додаємо SignalR
 builder.Services.AddSignalR();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseRouting();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
-
-// Маршрут для SignalR
-app.MapHub<ChatWebApp.Hubs.ChatHub>("/chatHub");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
