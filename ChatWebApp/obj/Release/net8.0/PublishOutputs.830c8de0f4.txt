@@ -1,0 +1,15 @@
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.exe
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.deps.json
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.runtimeconfig.json
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.pdb
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.ObjectPool.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Options.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\System.Net.WebSockets.WebSocketProtocol.dll
