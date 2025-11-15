@@ -4,6 +4,7 @@ D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Ou
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.dll
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.runtimeconfig.json
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\ChatWebApp.pdb
+D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Azure.AI.TextAnalytics.dll
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Azure.Core.dll
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Azure.Identity.dll
 D:\проекты и учёба\тест\ChatWebApp\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll

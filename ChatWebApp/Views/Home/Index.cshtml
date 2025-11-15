@@ -19,19 +19,20 @@
 
     .messages {
         flex: 1;
-        padding: 10px;
+        padding: 20px;
         overflow-y: auto;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .message {
         margin: 5px 10px;
         padding: 10px 15px;
         border-radius: 20px;
-        max-width: 60%;
+        max-width: 70%;
         word-wrap: break-word;
         color: #fff;
+        font-size: 16px;
     }
 
     .message.user {
@@ -39,7 +40,7 @@
     }
 
     .message.positive { background-color: #4CAF50; }
-    .message.neutral  { background-color: #9E9E9E; }
+    .message.neutral  { background-color: #FFC107; }
     .message.negative { background-color: #F44336; }
 
     .input-area {
@@ -71,15 +72,6 @@
     .input-area button:hover {
         background-color: #1976D2;
     }
-
-    .messages::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .messages::-webkit-scrollbar-thumb {
-        background-color: rgba(0,0,0,0.2);
-        border-radius: 4px;
-    }
 </style>
 
 <div class="chat-container">
@@ -92,40 +84,49 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
 <script>
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/chatHub")
         .build();
 
     connection.on("ReceiveMessage", (user, message, sentiment) => {
-        const li = document.createElement("div");
-        li.classList.add("message");
+    const div = document.createElement("div");
+    div.classList.add("message");
 
-        if(sentiment === "Positive") li.classList.add("positive");
-        else if(sentiment === "Negative") li.classList.add("negative");
-        else li.classList.add("neutral");
+    const s = Number(sentiment);
 
-        const currentUser = document.getElementById("userInput").value;
-        if(user === currentUser) li.classList.add("user");
+    let cls = "neutral";
+    if (s === 2) cls = "positive";
+    else if (s === 0) cls = "negative";
 
-        li.textContent = `${user}: ${message}`;
-        document.getElementById("messagesList").prepend(li);
-    });
+    div.classList.add(cls);
+
+    const currentUser = document.getElementById("userInput").value;
+    if (user === currentUser) div.classList.add("user");
+
+    div.textContent = `${user}: ${message}`;
+
+    const msgList = document.getElementById("messagesList");
+    msgList.appendChild(div);
+
+    msgList.scrollTop = msgList.scrollHeight;
+});
 
     connection.start().catch(err => console.error(err.toString()));
 
     document.getElementById("sendBtn").addEventListener("click", () => {
-    const user = document.getElementById("userInput").value;
-    const msg = document.getElementById("messageInput").value;
-    if(!msg) return;
+        const user = document.getElementById("userInput").value;
+        const msg = document.getElementById("messageInput").value;
+        if (!msg) return;
 
-    connection.invoke("SendMessage", user, msg)
-        .catch(err => console.error(err.toString()));
+        connection.invoke("SendMessage", user, msg)
+            .catch(err => console.error(err.toString()));
 
-    document.getElementById("messageInput").value = "";
-});
+        document.getElementById("messageInput").value = "";
+    });
 
-    document.getElementById("messageInput").addEventListener("keyup", function(e){
-        if(e.key === "Enter") document.getElementById("sendBtn").click();
+    document.getElementById("messageInput").addEventListener("keyup", function (e) {
+        if (e.key === "Enter") document.getElementById("sendBtn").click();
     });
 </script>

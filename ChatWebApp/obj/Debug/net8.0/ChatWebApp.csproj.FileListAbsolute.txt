@@ -149,3 +149,4 @@ D:\проекты и учёба\тест\ChatWebApp\bin\Debug\net8.0\runtimes\wi
 D:\проекты и учёба\тест\ChatWebApp\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\проекты и учёба\тест\ChatWebApp\obj\Debug\net8.0\ChatWebApp.sourcelink.json
 D:\проекты и учёба\тест\ChatWebApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\проекты и учёба\тест\ChatWebApp\bin\Debug\net8.0\Azure.AI.TextAnalytics.dll
