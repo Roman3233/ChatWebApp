@@ -3,17 +3,20 @@ using ChatWebApp.Models;
 using ChatWebApp.Services;
 using Microsoft.AspNetCore.SignalR;
 
+// SignalR hub that processes incoming messages, analyzes sentiment, saves results to database, and broadcasts them.
 public class ChatHub : Hub
 {
-    private readonly ApplicationDbContext _db;
-    private readonly TextAnalysisService _textAnalysis;
+    private readonly ApplicationDbContext _db;  // Database context
+    private readonly TextAnalysisService _textAnalysis; // Azure sentiment analyzer
 
+    // Constructor receives database context and sentiment analyzer via DI.
     public ChatHub(ApplicationDbContext db, TextAnalysisService textAnalysis)
     {
         _db = db;
         _textAnalysis = textAnalysis;
     }
 
+    // Processes an incoming message: validates, analyzes sentiment, saves to database, broadcasts to all clients.
     public async Task SendMessage(string user, string message)
     {
         if (string.IsNullOrWhiteSpace(message)) return;

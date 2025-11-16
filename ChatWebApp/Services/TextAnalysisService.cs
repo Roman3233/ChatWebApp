@@ -7,6 +7,7 @@ namespace ChatWebApp.Services
     {
         private readonly TextAnalyticsClient _client;
 
+        // Initializes the service using configuration values.
         public TextAnalysisService(IConfiguration config)
         {
             var endpoint = config["TextAnalytics:Endpoint"];
@@ -18,6 +19,7 @@ namespace ChatWebApp.Services
             );
         }
 
+        // Analyzes given text and returns sentiment label and confidence score.
         public (int sentiment, double score) Analyze(string text)
         {
             var result = _client.AnalyzeSentiment(text);

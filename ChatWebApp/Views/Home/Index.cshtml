@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Chat";
 }
-
+<!-- STYLES -->
 <style>
     html, body {
         height: 100%;
@@ -74,6 +74,8 @@
     }
 </style>
 
+<!-- HTML STRUCTURE -->
+
 <div class="chat-container">
     <div id="messagesList" class="messages"></div>
     <div class="input-area">
@@ -83,19 +85,24 @@
     </div>
 </div>
 
+<!-- SCRIPTS -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
 
 <script>
+    // Create SignalR connection to server hub.
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/chatHub")
         .build();
-
+    // Receive message from server.
     connection.on("ReceiveMessage", (user, message, sentiment) => {
     const div = document.createElement("div");
     div.classList.add("message");
 
+    // convert sentiment to number
     const s = Number(sentiment);
 
+    // map to CSS class
     let cls = "neutral";
     if (s === 2) cls = "positive";
     else if (s === 0) cls = "negative";
@@ -107,25 +114,30 @@
 
     div.textContent = `${user}: ${message}`;
 
+    // append and autoscroll
     const msgList = document.getElementById("messagesList");
     msgList.appendChild(div);
-
     msgList.scrollTop = msgList.scrollHeight;
 });
-
+    // Start the SignalR connection and log errors to console.
     connection.start().catch(err => console.error(err.toString()));
 
+    // Click handler for send button.
+    // Reads user and message values, validates non-empty message,
+    // invokes server method 'SendMessage' and clears input.
     document.getElementById("sendBtn").addEventListener("click", () => {
         const user = document.getElementById("userInput").value;
         const msg = document.getElementById("messageInput").value;
         if (!msg) return;
 
+        // invoke ChatHub.SendMessage(user, msg)
         connection.invoke("SendMessage", user, msg)
             .catch(err => console.error(err.toString()));
-
+        // clear input after sending
         document.getElementById("messageInput").value = "";
     });
 
+    // Triggers send button click when Enter is pressed.
     document.getElementById("messageInput").addEventListener("keyup", function (e) {
         if (e.key === "Enter") document.getElementById("sendBtn").click();
     });

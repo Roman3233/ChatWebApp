@@ -1,5 +1,6 @@
 ﻿namespace ChatWebApp.Models
 {
+    // Sentiment categories used for UI coloring.
     public enum SentimentLabel
     {
         Negative = 0,
@@ -7,6 +8,7 @@
         Positive = 2
     }
 
+    // Represents a message sent in chat and stored in the database.
     public class Message
     {
         public int Id { get; set; }
