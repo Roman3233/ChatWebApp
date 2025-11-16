@@ -25,6 +25,9 @@ ChatWebApp is a real-time web chat application built with ASP.NET Core MVC and A
 - **Persistent Storage:** All messages and sentiment scores are stored in Azure SQL Database.  
 - **Responsive Chat UI:** Full-screen, flexible layout optimized for desktop browsers.  
 ---
+## Screenshots
+<img width="1290" height="263" alt="image" src="https://github.com/user-attachments/assets/46d5fcf9-fd49-4591-983f-2b4362125be4" />
+---
 ## Usage
 1. Enter your username in the input field.
 2. Type a message and press Enter or click Send.
