@@ -27,6 +27,7 @@ ChatWebApp is a real-time web chat application built with ASP.NET Core MVC and A
 ---
 ## Screenshots
 <img width="1290" height="263" alt="image" src="https://github.com/user-attachments/assets/46d5fcf9-fd49-4591-983f-2b4362125be4" />
+
 ---
 ## Usage
 1. Enter your username in the input field.
