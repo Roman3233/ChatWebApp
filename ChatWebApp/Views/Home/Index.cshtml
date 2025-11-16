@@ -3,75 +3,84 @@
 }
 <!-- STYLES -->
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 
-    .chat-container {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
 
-    .messages {
-        flex: 1;
-        padding: 20px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-    }
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
 
-    .message {
-        margin: 5px 10px;
-        padding: 10px 15px;
-        border-radius: 20px;
-        max-width: 70%;
-        word-wrap: break-word;
-        color: #fff;
-        font-size: 16px;
-    }
+.message {
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    color: #fff;
+    font-size: 16px;
+}
 
-    .message.user {
-        align-self: flex-end;
-    }
+.message.user {
+    align-self: flex-end;
+}
 
-    .message.positive { background-color: #4CAF50; }
-    .message.neutral  { background-color: #FFC107; }
-    .message.negative { background-color: #F44336; }
+.message.positive { background-color: #4CAF50; }
+.message.neutral  { background-color: #FFC107; }
+.message.negative { background-color: #F44336; }
 
-    .input-area {
-        display: flex;
-        padding: 10px;
-        background-color: #fff;
-        border-top: 1px solid #ccc;
-    }
+.input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    gap: 10px;
+}
 
-    .input-area input[type=text] {
-        flex: 1;
-        padding: 10px 15px;
-        border-radius: 25px;
-        border: 1px solid #ccc;
-        outline: none;
-        margin-right: 10px;
-    }
+.input-area #userInput {
+    flex: 0 0 150px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+}
 
-    .input-area button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 25px;
-        background-color: #2196F3;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.input-area #messageInput {
+    flex: 1 1 auto;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+}
 
-    .input-area button:hover {
-        background-color: #1976D2;
-    }
+.input-area button {
+    flex: 0 0 100px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2196F3;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #1976D2;
+}
 </style>
 
 <!-- HTML STRUCTURE -->
