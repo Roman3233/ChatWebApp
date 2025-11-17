@@ -26,12 +26,13 @@ ChatWebApp is a real-time web chat application built with ASP.NET Core MVC and A
 - **Responsive Chat UI:** Full-screen, flexible layout optimized for desktop browsers.  
 ---
 ## Screenshot
-<img width="1294" height="277" alt="image" src="https://github.com/user-attachments/assets/2b10d911-14a3-4e77-aa54-b716900033be" />
+<img width="1298" height="280" alt="image" src="https://github.com/user-attachments/assets/928e1392-2d08-4392-91bf-43a4f9bd418b" />
+
 
 ---
 ## Usage
 1. Enter your username in the input field.
 2. Type a message and press Enter or click Send.
 3. Messages will appear in real-time in the chat window, color-coded according to sentiment.
-> **Note:** The first message after opening the chat may take a second or two to appear due to initial SignalR connection setup.
+> **Note:** The first message after opening the chat may take a second or two to appear due to initial SignalR connection setup and free Azure subscription.
 4. All messages are stored in Azure SQL Database.
