@@ -1,4 +1,4 @@
-# P.S. The chat is not working due to Azure DB expiration.
+# P.S. The chat is not working due to the expiration of the Azure BD subscription.
 # ChatWebApp
 
 ## Overview
